@@ -25,5 +25,8 @@ kernel.bin: kernel_full.bin boot.bin
 run: all
 	qemu-system-x86_64 -drive format=raw,file="obj/kernel.bin",index=0,if=floppy, -m 128M
 
+qemu:
+	qemu-system-x86_64 -drive format=raw,file="obj/kernel.bin",index=0,if=floppy, -m 128M
+
 clean:
 	rm obj/*

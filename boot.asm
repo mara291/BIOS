@@ -12,7 +12,6 @@ KERNEL_LOCATION equ 0x1000
 
     ; read from disk
     mov bx, 0x7e00
-    ;mov bx, KERNEL_LOCATION
     mov ah, 2       ; read in CHS mode
     mov al, 1       ; how many sectors to read
     mov ch, 0       ; cylinder number
@@ -304,8 +303,7 @@ start_protected_mode:
 
 end:
     jmp $
-; $  - current memory address
-; $$ - beginning of current section
+
 times 510-($-$$) db 0              
 dw 0xaa55
 
